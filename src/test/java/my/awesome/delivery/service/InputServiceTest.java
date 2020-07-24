@@ -32,11 +32,10 @@ public class InputServiceTest {
     private static final String WRONG_ARGUMENT_COUNT_RESULT = "{8801=3.6, 90005=1.33}";
 
     InputService inputService = new InputService();
-    Map<Integer, Double> postalCodeWeights = null;
 
     @Test
     public void correctInputTest() {
-        postalCodeWeights = new ConcurrentHashMap();
+        Map<Integer, Double> postalCodeWeights = new ConcurrentHashMap();
         String[] testArray = CORRECT_INPUT.split(",");
         Arrays.stream(testArray).forEach(line -> inputService.processLine(line, postalCodeWeights));
         assertEquals(CORRECT_INPUT_RESULT, postalCodeWeights.toString());
