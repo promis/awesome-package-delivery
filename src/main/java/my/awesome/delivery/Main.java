@@ -25,6 +25,6 @@ public class Main {
         }
         ScheduledExecutorService executor = Executors.newScheduledThreadPool(2);
         executor.schedule(new InputWorker(postalCodeWeights), 0, TimeUnit.SECONDS);
-        executor.scheduleAtFixedRate(new OutputWorker(postalCodeWeights), 0, 3, TimeUnit.SECONDS);
+        executor.scheduleAtFixedRate(new OutputWorker(postalCodeWeights), 0, 1, TimeUnit.MINUTES);
     }
 }
